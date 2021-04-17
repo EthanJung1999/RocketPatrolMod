@@ -7,7 +7,8 @@ Add your own (copyright-free) background music to the Play scene (5)
 credit: https://opengameart.org/content/music-2
 Create a new spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (20)
 Specialship: 48x32, speed is 5, and worth 50
-
+Track a high score that persists across scenes and display it in the UI (5)
+Displays at top right corner
 */
 let config = {
     type: Phaser.AUTO,
@@ -17,7 +18,8 @@ let config = {
 }
 let game = new Phaser.Game(config);
 // reserve keyboard vars
-let keyF, keyR, keyLEFT, keyRIGHT
+let keyF, keyR, keyLEFT, keyRIGHT;
+let highScore = 0;
 // set UI sizes
 let borderUISize = game.config.height /15;
 let borderPadding = borderUISize / 3;

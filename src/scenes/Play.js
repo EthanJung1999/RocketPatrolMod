@@ -58,6 +58,7 @@ class Play extends Phaser.Scene{
     fixedWidth: 70
   }
   this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, this.p1Score, scoreConfig);
+  this.high = this.add.text(borderUISize + borderPadding + 450, borderUISize + borderPadding*2, highScore, scoreConfig);
   if(!this.p1Rocket.reset()){
   this.add.text(borderUISize + borderPadding + 180, borderUISize + borderPadding*2, 'FIRE', scoreConfig);
   
@@ -69,6 +70,9 @@ this.clock = this.time.delayedCall(game.settings.gameTimer, () => {
     this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5);
     this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or <- for Menu', scoreConfig).setOrigin(0.5);
     this.gameOver = true;
+    if(this.p1Score > highScore){
+    highScore = this.p1Score;
+    }
 }, null, this);
 this.speedup = this.time.delayedCall(30000, () =>{
   this.ship01.speedup();
@@ -76,6 +80,8 @@ this.speedup = this.time.delayedCall(30000, () =>{
   this.ship03.speedup();
   this.ship04.speedup();
 }, null, this);
+
+
     }
     update() {
         // check key input for restart
@@ -146,4 +152,5 @@ if(this.checkCollision(this.p1Rocket, this.ship03)) {
         this.scoreLeft.text = this.p1Score;
         this.sound.play('sfx_explosion');       
       }
+   
 }
