@@ -7,6 +7,7 @@ class Menu extends Phaser.Scene{
         this.load.audio('sfx_select', './assets/blip_select12.wav');
         this.load.audio('sfx_explosion', './assets/explosion38.wav');
         this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
+        this.load.audio('sfx_background', './assets/seashore.wav');
       }
     create(){
         let menuConfig = {
@@ -39,6 +40,7 @@ keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
             gameTimer: 60000    
           }
           this.sound.play('sfx_select');
+          this.sound.play('sfx_background');
           this.scene.start('playScene');    
         }
         if (Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
@@ -48,6 +50,7 @@ keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
             gameTimer: 45000    
           }
           this.sound.play('sfx_select');
+          this.sound.play('sfx_background');
           this.scene.start('playScene');    
         }
       }
