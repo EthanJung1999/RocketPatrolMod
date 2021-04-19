@@ -7,11 +7,12 @@ Randomize each spaceship's movement direction at the start of each play (5)
 Add your own (copyright-free) background music to the Play scene (5)
 credit: https://opengameart.org/content/music-2
 
-Create a new spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (20)
-Specialship: 48x32, speed is 5, and worth 50
+Display the time remaining (in seconds) on the screen (10)
 
 Track a high score that persists across scenes and display it in the UI (5)
 Displays when the game is over
+Create a new spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (20)
+Specialship: 48x32, speed is 5, and worth 50
 
 Implement a simultaneous two-player mode (30)
 player1 control:
@@ -19,6 +20,8 @@ A to left and D to right, F to fire
 player2 control:
 left arrow to left and right arrow to right, space to fire
 player1 score is at top left and player2 score is at top right
+
+
 */
 let config = {
     type: Phaser.AUTO,

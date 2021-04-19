@@ -2,6 +2,7 @@ class Play extends Phaser.Scene{
     constructor(){
         super("playScene");
     }
+    
     preload() {
         // load images/tile sprites
         this.load.image('p1', './assets/p1.png');
@@ -64,6 +65,8 @@ class Play extends Phaser.Scene{
   }
   this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, this.p2Score, scoreConfig);
   this.scoreRight = this.add.text(borderUISize + borderPadding + 450, borderUISize + borderPadding*2, this.p1Score, scoreConfig);
+  this.timer = game.settings.gameTimer / 1000;
+  this.timertext = this.add.text(borderUISize + borderPadding + 350, borderUISize + borderPadding*2, this.timer, scoreConfig);
   if(!this.p1Rocket.reset()){
   this.add.text(borderUISize + borderPadding + 180, borderUISize + borderPadding*2, 'FIRE', scoreConfig);
   
@@ -71,6 +74,7 @@ class Play extends Phaser.Scene{
   // GAME OVER flag
 this.gameOver = false;
 scoreConfig.fixedWidth = 0;
+this.timeEvent = this.time.addEvent({ delay: 1000, callback: () =>{this.timer -= 1; this.timertext.text = this.timer}, callbackScope: this, loop: true });
 this.clock = this.time.delayedCall(game.settings.gameTimer, () => {
   if(this.p1Score > highScore){
     highScore = this.p1Score;
