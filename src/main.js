@@ -21,6 +21,7 @@ Create a new spaceship type (w/ new artwork) that's smaller, moves faster, and i
 Specialship: 48x32, speed is 5, and worth 50
 
 Implement a new timing/scoring mechanism that adds time to the clock for successful hits (20)
+Add one second for every hit
 
 Implement a simultaneous two-player mode (30)
 player1 control:
