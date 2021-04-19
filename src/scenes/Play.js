@@ -190,7 +190,8 @@ if(this.checkCollision(this.p1Rocket, this.ship03)) {
           this.p2Score += ship.points;
         this.scoreLeft.text = this.p2Score;
         this.sound.play('sfx_explosion');
-        }       
+        }
+        this.timer += 1;       
       }
    
 }
